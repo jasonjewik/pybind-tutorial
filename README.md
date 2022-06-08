@@ -22,5 +22,5 @@ Specify `DSHARED_LIBS=ON` if you want to build shared libraries for use by Pytho
 
 Running the examples:
 ```bash
-$ python3 scripts/[file].py
+$ python scripts/[file].py
 ```
