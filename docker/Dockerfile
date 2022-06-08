@@ -3,6 +3,7 @@ FROM ubuntu
 # Install packages
 RUN apt-get update && apt-get install -y \
     build-essential \
+    cmake \
     python3 \
     python3-dev \
     python3-pip
