@@ -22,5 +22,6 @@ Specify `DSHARED_LIBS=ON` if you want to build shared libraries for use by Pytho
 
 Running the examples:
 ```bash
-$ python scripts/[file].py
+$ python scripts/[file].py # Available only if built with DSHARED_LIBS=ON
+$ build/bin/main # Available only if built with DEXEC=ON
 ```
