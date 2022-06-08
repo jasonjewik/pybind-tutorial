@@ -1,4 +1,4 @@
-# Boost-Python
+# pybind11 Tutorial
 
 ## Description
 Learning how to use pybind11.
