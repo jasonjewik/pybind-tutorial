@@ -1,7 +1,7 @@
-import example_clib
+import example_clib as example
 from example_clib import add, subtract
 
-print(example_clib.__doc__)
+print(example.__doc__)
 print('=====')
 
 print(add.__doc__)
@@ -16,4 +16,4 @@ print(f'10 - 4 = {subtract(10, 4)}')
 print(f'5 - 6 = {subtract(j=6, i=5)}')
 print('=====')
 
-print(f'The answer: {example_clib.the_answer}')
+print(f'The answer: {example.the_answer}')

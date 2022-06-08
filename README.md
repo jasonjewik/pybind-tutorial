@@ -14,8 +14,11 @@ $ docker/run.sh
 
 Building the source code:
 ```bash
-$ mkdir build && cd build && cmake .. && make
+$ mkdir build && cd build
+$ cmake -DSHARED_LIBS=[<ON>/<OFF>] -DEXEC=[<ON>/<OFF>] ..
+$ make
 ```
+Specify `DSHARED_LIBS=ON` if you want to build shared libraries for use by Python. Specify `DEXEC=ON` if you want to build C++ executables (which will also build static libraries).
 
 Running the examples:
 ```bash

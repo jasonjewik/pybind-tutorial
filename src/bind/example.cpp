@@ -1,14 +1,7 @@
 #include <pybind11/pybind11.h>
+#include "example.h"
 
 namespace py = pybind11;
-
-int add(int i, int j) {
-    return i + j;
-}
-
-int subtract(int i, int j) {
-    return i - j;
-}
 
 PYBIND11_MODULE(example_clib, m) {
     m.doc() = "pybind11 example plugin"; // optional module docstring
