@@ -12,8 +12,12 @@ $ docker/build.sh
 $ docker/run.sh
 ```
 
-Building and running the example:
+Building the source code:
 ```bash
-$ make
-$ python3 main.py
+$ mkdir build && cd build && cmake .. && make
+```
+
+Running the examples:
+```bash
+$ python3 scripts/[file].py
 ```

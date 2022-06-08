@@ -21,4 +21,5 @@ include_directories(include)
 
 # Build shared libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/shared)
-pybind11_add_module(example SHARED src/example.cpp)
+pybind11_add_module(example_clib SHARED src/example.cpp)
+pybind11_add_module(pet_clib SHARED src/pet.cpp)

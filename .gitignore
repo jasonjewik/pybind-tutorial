@@ -35,3 +35,4 @@
 build/
 .bash_history
 .python_history
+scripts/__pycache__/
