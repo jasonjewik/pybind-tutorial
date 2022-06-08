@@ -11,8 +11,12 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install "pybind11[global]"
 
 # We are going to mount the current working directory into my-project
-RUN mkdir -p /home/my-project
+ENV HOME=/home/my-project
+RUN mkdir -p $HOME
+
+# Set Python path so we can import the shared libraries
+ENV PYTHONPATH=$PYTHONPATH:$HOME/build/shared
 
 # When running the container, we'll start in my-project
-WORKDIR /home/my-project
+WORKDIR $HOME
 CMD ["/bin/bash"]

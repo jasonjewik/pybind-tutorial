@@ -1,5 +1,3 @@
-import sys
-sys.path.append("build/shared")
 from example import add
 
 def main():

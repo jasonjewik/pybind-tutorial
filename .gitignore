@@ -31,5 +31,7 @@
 *.out
 *.app
 
-# Build
+# Others
 build/
+.bash_history
+.python_history
