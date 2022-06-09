@@ -1,21 +1,21 @@
 #include <pybind11/pybind11.h>
-#include "pet.h"
+#include "person.h"
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(pet_clib, m) {
+PYBIND11_MODULE(person_clib, m) {
     m.doc() = "pybind11 example custom data structure";
 
-    py::class_<Pet>(m, "Pet")
+    py::class_<Person>(m, "Person")
         .def(py::init<const std::string &, int>())
         // We can bind the getter and setter to new names
-        .def("get_name", &Pet::getName)
-        .def("set_name", &Pet::setName)
+        .def("get_name", &Person::getName)
+        .def("set_name", &Person::setName)
         // Or we can use Python's property getter/setter
-        .def_property("age", &Pet::getAge, &Pet::setAge)
+        .def_property("age", &Person::getAge, &Person::setAge)
         .def("__repr__",
-            [](const Pet &a) {
-                return "Pet('" + a.getName() + "')";
+            [](const Person &a) {
+                return "Person('" + a.getName() + "')";
             }
         );
 }

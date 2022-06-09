@@ -3,8 +3,8 @@
 #include <iostream>
 #include <string>
 
-#include "example.h"
-#include "pet.h"
+#include "basic_math.h"
+#include "person.h"
 
 int main() {
     int i, j;
@@ -20,14 +20,14 @@ int main() {
 
     std::cout << "Sum: " << add(i, j) << "\n";
 
-    // Create a pet
+    // Create a person
     std::cout << "Enter a name: ";
     std::cin >> name;
     std::cout << "Enter an age: ";
     std::cin >> age;
-    Pet p = Pet(name, age);
-    std::cout << "You created a pet whose name is '" << p.getName() << "'\n";
-    std::cout << "Your pet's age is " << age << " years old\n";
+    Person p = Person(name, age);
+    std::cout << "You created a person whose name is '" << p.getName() << "'\n";
+    std::cout << "Your person's age is " << age << " years old\n";
 
     return 0;
 }

@@ -1,9 +1,9 @@
 #include <pybind11/pybind11.h>
-#include "example.h"
+#include "basic_math.h"
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(example_clib, m) {
+PYBIND11_MODULE(basic_math_clib, m) {
     m.doc() = "pybind11 example plugin"; // optional module docstring
 
     // Use the literals namespace

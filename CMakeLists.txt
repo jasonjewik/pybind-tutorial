@@ -29,8 +29,9 @@ if (SHARED_LIBS)
     # Build shared libraries
     set(BUILD_SHARED_LIBS ON)
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/shared)
-    pybind11_add_module(example_clib src/lib/example.cpp src/bind/example.cpp)
-    pybind11_add_module(pet_clib src/lib/pet.cpp src/bind/pet.cpp)
+
+    pybind11_add_module(basic_math_clib src/lib/basic_math.cpp src/bind/basic_math.cpp)
+    pybind11_add_module(person_clib src/lib/person.cpp src/bind/person.cpp)
 endif()
 
 
@@ -38,8 +39,15 @@ if (EXEC)
     # Build executables
     set(BUILD_SHARED_LIBS OFF)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-    add_library(examplelib src/lib/example.cpp)
+
+    add_library(basicmathlib src/lib/basic_math.cpp)
+    add_library(personlib src/lib/person.cpp)
+    add_executable(basic_example src/basic_example.cpp)
+    target_link_libraries(basic_example basicmathlib personlib)
+
+    add_library(eventdispatcherlib src/lib/event_dispatcher.cpp)
+    add_library(eventlib src/lib/event.cpp)
     add_library(petlib src/lib/pet.cpp)
-    add_executable(main src/main.cpp)
-    target_link_libraries(main examplelib petlib)
+    add_executable(adv_example src/adv_example.cpp)
+    target_link_libraries(adv_example eventdispatcherlib eventlib petlib)
 endif()

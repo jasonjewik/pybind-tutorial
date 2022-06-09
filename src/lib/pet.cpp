@@ -1,17 +1,7 @@
 #include "pet.h"
+#include "event.h"
 
-void Pet::setName(const std::string &name_) { 
-    name = name_; 
-}
-
-const std::string &Pet::getName() const {
-    return name;
-}
-
-void Pet::setAge(int age_) {
-    age = age_;
-}
-
-int Pet::getAge() const {
-    return age;
-}
+Pet::Pet(std::string name_, int age_, Event *event_) :
+    name(name_), age(age_) { 
+    event = event_->setOwner(this);
+};
